@@ -3,11 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BlogSite</title>
+    <link rel="stylesheet" href="../public/styles/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="/user">Register</a>
-    <a href="/user/login">Login</a>
-    <h3><%- dash %></h3>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        BlogSite
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <%-dash %>
+            
+          
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="jumbotron" style="padding:20px;margin:0 20px;">
+        <h1>Hello, bloggers!</h1>
+        <p class="lead">This is a platform where you can create Blogs and share it with your friends</p>
+        <p class="lead">Total Users - <b><%=users %></b></p>
+        
+      </div>
+    <div class="blogeach" style="margin:0 20px;">
+        <div class="row" style="margin:0 auto;">
+        <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
+           <div class="imgwithname">
+               <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
+               <h3>>> My first blog</h3>
+           </div>
+           
+            
+           
+          </div>
+          <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
+            <div class="imgwithname">
+                <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
+                <h3>>> My god</h3>
+            </div>
+            
+             
+            
+           </div>
+           <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
+            <div class="imgwithname">
+                <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
+                <h3>>> My awesome</h3>
+            </div>
+            
+             
+            
+           </div>
+         
+           </div>
+    </div>
 </body>
 </html>

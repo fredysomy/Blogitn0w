@@ -26,12 +26,17 @@ app.get('/',(req,res)=>
 {
     if(req.session.user) 
     {
-         res.render('main',{dash:'<a href="/user/u">Dashboard</a>'});
-         blogsc.find({}).then((user)=>{console.log(user.length)});
+         
+         usersch.find({}).then((user)=>{
+            res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',
+            users:user.length});
+         });
     }
     else{
-        res.render('main',{dash: ' '});
-        blogsc.find({}).then((user)=>{console.log(user.length)});
+        usersch.find({}).then((user)=>{
+        res.render('main',{dash: '<li class="nav-item"><a class="nav-link" href="/user">Register</a></li><li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>',
+        users:user.length});});
+       
     }
 });
 app.use('/user',userroute);
