@@ -29,17 +29,18 @@ app.get('/',(req,res)=>
          
         blogsc.find({}).then(data=>{
             usersch.find({}).then(data1=>{
-                res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',
-            users:data1.length,blogdata:data});
+                res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',users:data1.length,blogdata:data});
             })
            })  
              
             
     }
     else{
-        usersch.find({}).then((user)=>{
+        blogsc.find({}).then(data=>{
+            usersch.find({}).then(data1=>{
         res.render('main',{dash: '<li class="nav-item"><a class="nav-link" href="/user">Register</a></li><li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>',
-        users:user.length});});
+        users:data1.length,blogdata:data}); })
+    })  
        
     }
 });
@@ -49,3 +50,4 @@ app.use('/feed',feedroute);
 app.listen(8080,()=>{
     console.log("server running on http://localhost:8080/")
 });
+
