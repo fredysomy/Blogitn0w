@@ -42,37 +42,30 @@
         <p class="lead">Total Users - <b><%=users %></b></p>
         
       </div>
-    <div class="blogeach" style="margin:0 20px;">
-        <div class="row" style="margin:0 auto;">
-        <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
-           <div class="imgwithname">
-               <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
-               <h3>>> My first blog</h3>
-           </div>
-           
-            
-           
-          </div>
-          <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
-            <div class="imgwithname">
-                <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
-                <h3>>> My god</h3>
-            </div>
-            
+    <div class="blogeach" style="margin:0 20px;display: flex;flex-direction: row;flex-wrap: wrap;">
+    <% blogdata.forEach(function(blog) { %>
+    <div class="col-lg-4 card pmd-card">
+      <div class="col-lg-12" style="display: flex;flex-direction: row;">
+        <div class="as">
+          <img src='https://avatars0.githubusercontent.com/u/64163306?s=460&v=4' height="50" width="60" style="margin-top: 10px;">
+
+        </div>
+        <div class="as" style="margin-left: 5px;">
+          <h3 class="card-title"><%= blog.head %></h3>
+          <p class="card-subtitle"><%= blog.daten %></p>
+          <a traget="_blank" href="localhost:8080/feed/<%=blog._id %>">hduk</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.</p>
+      </div>
+    </div>
+    <% }); %>
+   
+    
              
             
-           </div>
-           <div class="col-lg-6 col-md-4 col-xl-5 col-sm-12" style="border: 2px black solid;border-radius: 6px;margin:7px;">
-            <div class="imgwithname">
-                <img src="https://avatars0.githubusercontent.com/u/64163306?s=460&v=4" widht="64px" height="64px" style="border-radius: 50%;margin:15px 0px;"><span style="margin:10px;font-size: 25px;">Fredy Somy</span><span style="font-size:15px;"> (fredysomy)</span>
-                <h3>>> My awesome</h3>
-            </div>
-            
-             
-            
-           </div>
-         
-           </div>
+           
     </div>
 </body>
 </html>

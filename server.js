@@ -27,10 +27,14 @@ app.get('/',(req,res)=>
     if(req.session.user) 
     {
          
-         usersch.find({}).then((user)=>{
-            res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',
-            users:user.length});
-         });
+        blogsc.find({}).then(data=>{
+            usersch.find({}).then(data1=>{
+                res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',
+            users:data1.length,blogdata:data});
+            })
+           })  
+             
+            
     }
     else{
         usersch.find({}).then((user)=>{

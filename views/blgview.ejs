@@ -25,21 +25,32 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               
-              
-              
-            
+           
             </ul>
             
           </div>
         </nav>
+        <div class="col-lg-9" style="margin:0 auto;">
     <%- b %>
-    <div>
+  </div>
+  
+    <div class="col-lg-9" style="margin:0 auto;">
+      <h3>Comments:</h3>
         <form action="/feed/addcomment" method="POST">
             <input type="hidden" name="obid" value= <%= obid %> >
             <input  class="form-control" id="one" type="text" name="name" required="required"><br>
             <%- c %>
         </form>
-        
+      
+          <% dd.forEach(function(drink) { %>
+            <div class="post-comments" style="border:1px black solid;background-color: rgb(234, 238, 241);margin: 3px;">
+				      <p class="meta"><b><%= drink.comentator %></b>  says : </p>
+				      <p style="margin-left: 5px;border:1px rgb(186, 221, 252) solid;background-color: rgb(241, 231, 217);">
+                <%= drink.comment %>
+				      </p>
+            </div>
+          <% }); %>
+      
     </div>
 </body>
 </html>

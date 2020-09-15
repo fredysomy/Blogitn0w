@@ -20,9 +20,11 @@ let blogsc = require('../models/blog.model');
 let cms=require('../models/comment.model')
 rout.route('/:id').get((req,res)=>{
     if(req.session.user){
-    blogsc.findById(req.params.id).then(data=> {res.render('blgview',{b:md.render(data.blog),c:"<button>ADD POST</button>",obid:req.params.id})
-    cms.find({blgid:req.params.id}).then(data=>{console.log(data)}).catch(err=>{console.log("err")})}
-    );
+        blogsc.findById(req.params.id).then(data1=> {
+            cms.find({blgid:req.params.id}).then(data=>{
+                res.render('blgview',{b:md.render(data1.blog),c:"<button>ADD POST</button>",obid:req.params.id,dd:data})
+            })
+        })
     
 }
     else{
