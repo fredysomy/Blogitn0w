@@ -125,14 +125,17 @@ router.route('/signin').post((req,res)=>{
 router.route('/u').get((req,res)=>{
     if(req.session.user){
 
-       blogsc.find({mailuser:req.session.user.email}).then((user)=>{console.log(user.length)});
-            
-        
-       res.render('dashboard',{
+       blogsc.find({mailuser:req.session.user.email}).then(data3=>{
+        res.render('dashboard',{
             title:req.session.user.realname,
             title2:req.session.user.name,
-            email:req.session.user.email
+            email:req.session.user.email,
+            myblog:data3
             });
+       })
+            
+        
+       
     }
     else{
         res.send("session timeout");
