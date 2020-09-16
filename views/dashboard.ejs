@@ -41,20 +41,44 @@
             </form>
           </div>
         </nav>
-    <div class="jumborton jumborton-fluid">
-        <h1 class="display-4 text text-center"><%= title %>'s Dashboard</h1>
+    
+        <div class="blogeach" style="display: flex;flex-direction: row;flex-wrap: wrap;">
+          <% myblog.forEach(function(blog1) { %>
+          <div class="col-lg-4 card pmd-card">
+            <div class="col-lg-12" style="display: flex;flex-direction: row;">
+              <div class="as">
+                <img src='https://avatars0.githubusercontent.com/u/64163306?s=460&v=4' height="50" width="60" style="margin-top: 10px;">
+      
+              </div>
+              <div class="as" style="margin-left: 5px;margin-top: 8px;">
+                <h5 class="card-title"><%= blog1.name %></h5>
+                <p class="card-subtitle"><%= blog1.uname %></p>
+               
+              </div>
+            </div>
+            <div class="card-body">
+              <a traget="_blank" href="http://blogsite.cleverapps.io/feed/<%=blog1._id %>"><h4><%= blog1.head %></h4></a>
+              <a href="/user/blog/<%= blog1._id %>">Edit Blog</a>
+            </div>
+          </div>
+          <% }); %>
+         
+          
+                   
+                  
+                 
+          </div>
         
-        <div class="row">
-            <div class="col-lg-2 border border-primary rounded"><h3 class="lead">Username: <%= title2 %></h3>
-        <h3 class="lead">Email: <%= email %></h3>
-       
-        
-    </div></div>
+    </div>
     </div>
     
     
 </body>
 </html>
+
+
+
+
 
 
 
