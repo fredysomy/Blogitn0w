@@ -50,14 +50,14 @@
           <img src='https://avatars0.githubusercontent.com/u/64163306?s=460&v=4' height="50" width="60" style="margin-top: 10px;">
 
         </div>
-        <div class="as" style="margin-left: 5px;">
-          <h3 class="card-title"><%= blog.head %></h3>
-          
-          <a traget="_blank" href="http://blogsite.cleverapps.io/feed/<%=blog._id %>">View Blog</a>
+        <div class="as" style="margin-left: 5px;margin-top: 8px;">
+          <h5 class="card-title"><%= blog.name %></h5>
+          <p class="card-subtitle"><%= blog.uname %></p>
+         
         </div>
       </div>
       <div class="card-body">
-        <p>Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.</p>
+        <a traget="_blank" href="http://blogsite.cleverapps.io/feed/<%=blog._id %>"><h4><%= blog.head %></h4></a>
       </div>
     </div>
     <% }); %>
