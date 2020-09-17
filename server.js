@@ -27,16 +27,16 @@ app.get('/',(req,res)=>
     if(req.session.user) 
     {
          
-        blogsc.find({}).then(data=>{
+        blogsc.find({}).sort({daten:-1}).then(data=>{
             usersch.find({}).then(data1=>{
-                res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',users:data1.length,blogdata:data});
+                res.render('main',{dash:'<li class="nav-item"><a class="nav-link" href="/user/u">Dashboard</a></li>',users:data1.length,blogdata:data,u:data1});
             })
            })  
              
             
     }
     else{
-        blogsc.find({}).then(data=>{
+        blogsc.find({}).sort({daten:-1}).then(data=>{
             usersch.find({}).then(data1=>{
         res.render('main',{dash: '<li class="nav-item"><a class="nav-link" href="/user">Register</a></li><li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>',
         users:data1.length,blogdata:data}); })

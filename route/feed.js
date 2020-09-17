@@ -29,7 +29,7 @@ rout.route('/:id').get((req,res)=>{
 }
     else{
         
-        blogsc.findById(req.params.id).then(data1=> {
+        blogsc.findById(req.params.id).sort({daten:-1}).then(data1=> {
             cms.find({blgid:req.params.id}).then(data=>{
          res.render('blgview',{b:md.render(data1.blog),c:'<a href="/">SIGNIN TO COMMENT</a>',obid:'_',dd:data})})})
     }

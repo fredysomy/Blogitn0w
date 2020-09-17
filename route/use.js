@@ -45,6 +45,7 @@ router.route('/register').post((req,res)=> {
         somem.name=req.body.name;
         somem.email=req.body.email;
         somem.pass=hash;
+        somem.img=`https://ui-avatars.com/api/?name=${req.body.realname}&rounded=true&format=png`;
        //localhost:8080/name=fredy&pass=*****
        //truthy falsy
         somem.save((err,doc)=>{
@@ -125,12 +126,13 @@ router.route('/signin').post((req,res)=>{
 router.route('/u').get((req,res)=>{
     if(req.session.user){
 
-       blogsc.find({mailuser:req.session.user.email}).then(data3=>{
+       blogsc.find({mailuser:req.session.user.email}).sort({daten:-1}).then(data3=>{
         res.render('dashboard',{
             title:req.session.user.realname,
             title2:req.session.user.name,
             email:req.session.user.email,
-            myblog:data3
+            myblog:data3,
+            img:req.session.user.img
             });
        })
             
@@ -165,6 +167,7 @@ router.route('/add/blg').post((req,res)=>{
     blgs.uname=req.session.user.name;
     blgs.head=req.body.head;
     blgs.blog=req.body.desc;
+    blgs.img=req.session.user.img;
     blgs.daten=Date.now();
     blgs.save((err)=>{
         if(err){

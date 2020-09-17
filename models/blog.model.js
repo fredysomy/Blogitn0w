@@ -8,7 +8,8 @@ var blogschema=new sc2({
     uname:{type:String,required:true},
     head: { type: String, required: true },
     blog: { type: String, required: true },
-    daten:{type: Date}
+    daten:{type: Date},
+    img:{type:String}
 });
 
 var blogsc=mon.model('blogsc',blogschema);

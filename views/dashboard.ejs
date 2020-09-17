@@ -41,20 +41,20 @@
             </form>
           </div>
         </nav>
-    
+        <div class="card-body pt-5 col-lg-3" align="center" style="margin:0 auto;">
+                        <img src="<%= img %>" alt="profile-image" class="profile"/>
+                        <h5 class="card-title text-center"><%= title %></h5>
+                        <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="icon-block text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
+                    </div>
+                </div>
+    <h3>My Blogs</h3>
         <div class="blogeach" style="display: flex;flex-direction: row;flex-wrap: wrap;">
           <% myblog.forEach(function(blog1) { %>
           <div class="col-lg-4 card pmd-card" style="height:fit-content;">
             <div class="col-lg-12" style="display: flex;flex-direction: row;">
-              <div class="as">
-                <img src='https://avatars0.githubusercontent.com/u/64163306?s=460&v=4' height="50" width="60" style="margin-top: 10px;">
-      
-              </div>
-              <div class="as" style="margin-left: 5px;margin-top: 8px;">
-                <h5 class="card-title"><%= blog1.name %></h5>
-                <p class="card-subtitle"><%= blog1.uname %></p>
-               
-              </div>
+             
+              
             </div>
             <div class="card-body">
               <a traget="_blank" href="http://blogsite.cleverapps.io/feed/<%=blog1._id %>"><h4><%= blog1.head %></h4></a>
