@@ -138,7 +138,7 @@ router.route('/u').get((req,res)=>{
        
     }
     else{
-        res.send("session timeout");
+        res.redirect('/user/login')
     }
 });
 router.route('/logout').get((req,res)=>{
