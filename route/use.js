@@ -45,6 +45,7 @@ router.route('/register').post((req,res)=> {
         somem.name=req.body.name;
         somem.email=req.body.email;
         somem.pass=hash;
+        somem.descr=" ";
         somem.img=`https://ui-avatars.com/api/?name=${req.body.realname}&rounded=true&format=png`;
        //localhost:8080/name=fredy&pass=*****
        //truthy falsy
@@ -127,14 +128,17 @@ router.route('/u').get((req,res)=>{
     if(req.session.user){
 
        blogsc.find({mailuser:req.session.user.email}).sort({daten:-1}).then(data3=>{
+           usersch.findOne({email:req.session.user.email}).then(data=>{
         res.render('dashboard',{
             title:req.session.user.realname,
             title2:req.session.user.name,
             email:req.session.user.email,
             myblog:data3,
-            img:req.session.user.img
+            img:data.img,
+            descri:data.descr
             });
-       })
+        })
+    })
             
         
        
@@ -142,6 +146,24 @@ router.route('/u').get((req,res)=>{
     else{
         res.redirect('/user/login')
     }
+});
+router.route('/updet').get((req,res)=>{
+    if(req.session.user){
+    usersch.findOne({email:req.session.user.email,name:req.session.user.name}).then(data=>{
+         res.render('upcred',{
+             img:data.img,
+             desc:data.descr
+         });
+    })
+}
+else{
+    res.redirect('/user/login');
+}
+   
+});
+router.route('/u/upcred').post((req,res)=>{
+     usersch.updateOne({email:req.session.user.email},{"$set":{"img":req.body.imgurl,"descr":req.body.desc}}).then(()=>{
+     blogsc.updateMany({mailuser:req.session.user.email},{"$set":{"img":req.body.imgurl}}).then(res.redirect('/user/u'))})
 });
 router.route('/logout').get((req,res)=>{
     if(req.session.user) {

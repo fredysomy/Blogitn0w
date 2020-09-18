@@ -8,7 +8,8 @@ var userschema= new schema({
   email:{type:String,require:true,unique:true,trim:true},
   pass:{type:String,require:true,unique:true,trim:true},
   verify:{type:Boolean,default:false},
-  img:{type:String}
+  img:{type:String},
+  descr:{type:String}
 });
 
 const usersc=mon.model('usersc',userschema);

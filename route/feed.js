@@ -22,7 +22,7 @@ rout.route('/:id').get((req,res)=>{
     if(req.session.user){
         blogsc.findById(req.params.id).then(data1=> {
             cms.find({blgid:req.params.id}).then(data=>{
-                res.render('blgview',{b:md.render(data1.blog),c:"<button>ADD POST</button>",obid:req.params.id,dd:data})
+                res.render('blgview',{head11:data1,b:md.render(data1.blog),c:"<button>ADD POST</button>",obid:req.params.id,dd:data})
             })
         })
     
@@ -31,7 +31,7 @@ rout.route('/:id').get((req,res)=>{
         
         blogsc.findById(req.params.id).sort({daten:-1}).then(data1=> {
             cms.find({blgid:req.params.id}).then(data=>{
-         res.render('blgview',{b:md.render(data1.blog),c:'<a href="/">SIGNIN TO COMMENT</a>',obid:'_',dd:data})})})
+         res.render('blgview',{head11:data1,b:md.render(data1.blog),c:'<a href="/">SIGNIN TO COMMENT</a>',obid:'_',dd:data})})})
     }
 });
 
