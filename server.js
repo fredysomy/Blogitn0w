@@ -44,6 +44,20 @@ app.get('/',(req,res)=>
        
     }
 });
+app.get('/:id',(req,res)=>{
+     blogsc.find({uname:req.params.id}).sort({daten:-1}).then(data3=>{
+           usersch.findOne({name:req.params.id}).then(data=>{
+        res.render('difuser',{
+            title:data.realname,
+            title2:data.name,
+            email:data.email,
+            myblog:data3,
+            img:data.img,
+            descri:data.descr
+            });
+        })
+    })
+});
 app.use('/user',userroute);
 app.use('/feed',feedroute);
 
