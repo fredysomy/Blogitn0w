@@ -44,7 +44,7 @@ app.get('/',(req,res)=>
        
     }
 });
-app.get('/:id',(req,res)=>{
+app.get('/p/:id',(req,res)=>{
      blogsc.find({uname:req.params.id}).sort({daten:-1}).then(data3=>{
            usersch.findOne({name:req.params.id}).then(data=>{
         res.render('difuser',{

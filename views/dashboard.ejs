@@ -35,19 +35,17 @@
               
             
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        
           </div>
         </nav>
         <div class="card-body pt-5 col-lg-3" align="center" style="margin:0 auto;">
-                        <img src="<%= img %>" alt="profile-image" class="profile" width="70px" height="70px"/>
+                        <img src="<%= img %>" alt="profile-image" class="profile" width="70px" height="70px" style="border-radius:50%;"/>
                         <h5 class="card-title text-center"><%= title %></h5>
-                         <p class="card-title text-center"><%= title2 %></p>
-                          <p class="card-title text-center"><%= email %></p>
+                        <p class="card-title text-center"><%= title2 %></p>
+                        <p class="card-title text-center"><%= email %></p>
                         <p class="card-text text-center"><%= descri %></p>
-                        <li><a href="/user/updet"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                        <a href="/user/updet">Edit Bio</a><span>,</span>
+                        <a href="/user/u/credupdate">Update Password</a>
                     </div>
                 </div>
     <h3>My Blogs</h3>
