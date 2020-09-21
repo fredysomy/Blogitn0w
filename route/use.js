@@ -2,6 +2,7 @@ var router=require('express').Router();
 var path= require('path');
 var bcy=require('bcrypt');
 var nm=require('nodemailer');
+const helmet = require("helmet");
 var randtoken=require('rand-token')
 require('dotenv').config()
 var bodyParser=require('body-parser');
@@ -9,6 +10,13 @@ const express = require('express');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 app=express();
+app.use(helmet.hidePoweredBy());
+app.use(helmet.xssFilter());
+app.use(
+  helmet.referrerPolicy({
+    policy: "no-referrer",
+  })
+);
 app.set('view engine','ejs');
 app.set('views',path.join("views"));//search
 let usersch=require('../models/user.model');
@@ -64,7 +72,7 @@ router.route('/register').post((req,res)=> {
                 html: `<p style="font-size:30;color:red;" align="center">Verify email of ${somem.name}</p><br><a href="${url}">${url}</a>`,
        };
             sgMail.send(msg)});
-           res.send("main sent")
+           res.render('verifyemail')
               
              }
     else{
@@ -151,7 +159,7 @@ router.route('/updet').get((req,res)=>{
     if(req.session.user){
     usersch.findOne({email:req.session.user.email,name:req.session.user.name}).then(data=>{
          res.render('upcred',{
-             img:data.img,
+             
              desc:data.descr
          });
     })
@@ -162,8 +170,8 @@ else{
    
 });
 router.route('/u/upcred').post((req,res)=>{
-     usersch.updateOne({email:req.session.user.email},{"$set":{"img":req.body.imgurl,"descr":req.body.desc}}).then(()=>{
-     blogsc.updateMany({mailuser:req.session.user.email},{"$set":{"img":req.body.imgurl}}).then(res.redirect('/user/u'))})
+     usersch.updateOne({email:req.session.user.email},{"$set":{"descr":req.body.desc}}).then(()=>{
+     res.redirect('/user/u')})
 });
 router.route('/logout').get((req,res)=>{
     if(req.session.user) {

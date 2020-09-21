@@ -9,9 +9,17 @@ md.render('# markdown-it rulezz!');
 require('dotenv').config()
 var bodyParser=require('body-parser');
 const express = require('express');
+const helmet = require("helmet");
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 app=express();
+app.use(helmet.hidePoweredBy());
+app.use(helmet.xssFilter());
+app.use(
+  helmet.referrerPolicy({
+    policy: "no-referrer",
+  })
+);
 app.set('view engine','ejs');
 app.set('views',path.join("views"));
 let usersch=require('../models/user.model');

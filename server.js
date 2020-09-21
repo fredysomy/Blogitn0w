@@ -1,9 +1,28 @@
 var mon=require('mongoose');
 var express=require('express');
 require('dotenv').config()
+const helmet = require("helmet");
 var path=require('path');
 var bodyParser=require('body-parser');
 app=express();
+app.use(helmet.hidePoweredBy());
+app.use(helmet.xssFilter());
+app.use(
+  helmet.referrerPolicy({
+    policy: "no-referrer",
+  })
+);
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "example.com"],
+      objectSrc: ["'none'"],
+      imgSrc:["'self'","'https://ui-avatars.com/api/'"],
+      upgradeInsecureRequests: [],
+    },
+  })
+);
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine','ejs');
