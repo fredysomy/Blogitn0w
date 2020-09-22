@@ -46,7 +46,7 @@
       <h3>Comments:</h3>
         <form action="/feed/addcomment" method="POST">
             <input type="hidden" name="obid" value= <%= obid %> >
-            <input  class="form-control" id="one" type="text" name="name" required="required"><br>
+            <input  class="form-control" id="one" type="text" name="name" required="required" <%- disble%>><br>
             <%- c %>
         </form>
       

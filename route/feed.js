@@ -9,17 +9,12 @@ md.render('# markdown-it rulezz!');
 require('dotenv').config()
 var bodyParser=require('body-parser');
 const express = require('express');
-const helmet = require("helmet");
+
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 app=express();
-app.use(helmet.hidePoweredBy());
-app.use(helmet.xssFilter());
-app.use(
-  helmet.referrerPolicy({
-    policy: "no-referrer",
-  })
-);
+
+
 app.set('view engine','ejs');
 app.set('views',path.join("views"));
 let usersch=require('../models/user.model');
@@ -30,7 +25,7 @@ rout.route('/:id').get((req,res)=>{
     if(req.session.user){
         blogsc.findById(req.params.id).then(data1=> {
             cms.find({blgid:req.params.id}).then(data=>{
-                res.render('blgview',{head11:data1,b:md.render(data1.blog),c:"<button>ADD POST</button>",obid:req.params.id,dd:data})
+                res.render('blgview',{head11:data1,b:md.render(data1.blog),c:"<button>ADD POST</button>",obid:req.params.id,dd:data,disble:""})
             })
         })
     
@@ -39,7 +34,7 @@ rout.route('/:id').get((req,res)=>{
         
         blogsc.findById(req.params.id).sort({daten:-1}).then(data1=> {
             cms.find({blgid:req.params.id}).then(data=>{
-         res.render('blgview',{head11:data1,b:md.render(data1.blog),c:'<a href="/">SIGNIN TO COMMENT</a>',obid:'_',dd:data})})})
+         res.render('blgview',{head11:data1,b:md.render(data1.blog),c:'<a href="/user/login">SIGNIN TO COMMENT</a>',obid:'_',dd:data,disble:"Disabled"})})})
     }
 });
 
@@ -48,9 +43,11 @@ rout.route('/addcomment').post((req,res)=>{
     d.blgid=req.body.obid;
     d.comment=req.body.name;
     d.comentator=req.session.user.realname;
+    
     d.save((err,docs)=>{
         if(docs){
             console.log("sucess")
+           
             res.redirect('back')
         }
         else{
