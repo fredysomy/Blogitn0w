@@ -1,0 +1,3 @@
+ATLAS_URI=mongodb://fredy2002:fredy2002@cluster0-shard-00-00.5ljhw.mongodb.net:27017,cluster0-shard-00-01.5ljhw.mongodb.net:27017,cluster0-shard-00-02.5ljhw.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-ex63aa-shard-0&authSource=admin&retryWrites=true&w=majority
+SESSION_ID=89yklj[jhgdo85tyu9d8
+SENDGRID_API_KEY=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
