@@ -10,7 +10,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div align="center" style="width:70%;">
+    <div align="center" style="width:70%;margin:0 auto;">
         <form action="/user/edit/blg" method="POST">
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="0" name="id" style="display:none;"><%= id %></textarea>
             <div class="form-group">
@@ -21,7 +21,7 @@
               
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"><%= des %></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="desc"><%= des %></textarea>
               </div>
               <button class="btn btn-primary">SUBMIT</button>
 </form>
