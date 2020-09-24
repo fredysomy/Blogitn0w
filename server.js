@@ -1,6 +1,6 @@
 var mon=require('mongoose');
 var express=require('express');
-require('dotenv').config()
+require('dotenv').config();
 
 var path=require('path');
 var bodyParser=require('body-parser');
@@ -62,8 +62,8 @@ app.get('/p/:id',(req,res)=>{
 });
 app.use('/user',userroute);
 app.use('/feed',feedroute);
-
-app.listen(8080,()=>{
+const PORT = process.env.PORT || 8000;
+app.listen(PORT,()=>{
     console.log("server running on http://localhost:8080/")
 });
 

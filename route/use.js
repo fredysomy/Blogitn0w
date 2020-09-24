@@ -25,7 +25,7 @@ const store = new MongoDBStore({
     collection: 'sessions'
 }); 
 app.use(session({
-    secret: process.env.SESSION_ID,
+    secret: "8f34579879856jidg8958hg58h",
     resave: true,
     saveUninitialized: true,
     unset: 'destroy',
