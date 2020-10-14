@@ -1,4 +1,4 @@
-# Blogging App<br>
+![image](https://socialify.git.ci/fredysomy/Blogitn0w/jpg?description=1&fileType=JPG&font=Bitter&forks=1&issues=1&language=1&owner=0&pulls=1&theme=Light)
 
 ### MongoDB,Express,node..<br>
 
