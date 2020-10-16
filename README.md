@@ -1,6 +1,6 @@
 ![image](https://socialify.git.ci/fredysomy/Blogitn0w/jpg?description=1&fileType=JPG&font=Bitter&forks=1&issues=1&language=1&owner=0&pulls=1&theme=Light)
 
-### MongoDB,Express,node..<br>
+## <h1 align=center>Blogitn0w</h1>
 
 #### <u>_`Features added till now:`_</u><br>
   * <u>✅Authentication part.✅</u>(Complete)<br>
