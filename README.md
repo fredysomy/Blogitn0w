@@ -1,8 +1,8 @@
-![image](https://socialify.git.ci/fredysomy/Blogitn0w/jpg?description=1&fileType=JPG&font=Bitter&forks=1&issues=1&language=1&owner=0&pulls=1&theme=Light)
+![image](https://socialify.git.ci/fredysomy/Blogitn0w/svg?font=Bitter&forks=1&issues=1&language=0&logo=https%3A%2F%2Fpng2.cleanpng.com%2Fsh%2Fcbc2af762a61091a875f671f51ccbd93%2FL0KzQYm3VMI0N5l2fZH0aYP2gLBuTfxmfKVqip9qbIDrcbPslL1od51pRd5qY3WwgLL7lPVzdqQySJ86LUGwRbLrhMk0bmQ4UdVqZEexQ4m6WMk5Pmk2TaQ9NEezR4i4UsM3P191htk%3D%2Fkisspng-letter-alphabet-gold-lace-patterns-0-1-1-5add93f339cad7.3838986815244707712367.png&owner=0&pulls=1&theme=Dark)
 
 ## <h1 align=center>Blogitn0w</h1>
 
-#### <u>_`Features added till now:`_</u><br>
+### <u>_`Features added till now:`_</u><br>
   * <u>✅Authentication part.✅</u>(Complete)<br>
     * 1.Login and register.✅<br>
     * 2.Password Encryption.✅<br>
@@ -10,24 +10,6 @@
     * 4.Email verification.✅<br>
   * <u>Credentials Update</u><br>
     * Brainstorming, not started yet.💡💡🤔🤔.<br>
- 
-
-#### _`This is a ongoing project and i am adding all the parts step by step..`_
-
-* Route Structure
-  * /feed
-  * /feed/:id
-  * /user/profile
-  * /user/:id
-  * /user/new
-  * /user/:id/edit
-  * /user/blog/:id/edit
-  * /user/login
-  * /user/
-
-
-#### Run the repo <br> 
-
 ## Note
 * I have used Sendgrids api key to send emails ( Get their API key)
 * For the database connectivity you need to go to mongodb atlas and create a database and get the MongoURI
