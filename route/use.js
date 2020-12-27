@@ -34,7 +34,7 @@ app.use(session({
 router.route('/').get((req,res)=>
 {
     res.render('index',{err: ""});
-    console.log(req.get('host'))
+    
 });
 router.route('/login').get((req,res)=>{
     res.render('login',{err:""});
