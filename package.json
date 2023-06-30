@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "helmet": "^4.1.1",
-    "jsdom": "^16.4.0",
+    "jsdom": "^16.5.0",
     "markdown-it": "^11.0.0",
     "mongoose": "^5.11.7",
     "nodemailer": "^6.4.11",
